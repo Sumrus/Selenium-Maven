@@ -2,6 +2,7 @@ package testcases;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -48,7 +49,9 @@ public class BaseClass {
 	
 	
 	@BeforeMethod
-	public void SetUp() {
+	public void SetUp(Method method) {
+		
+		test = report.startTest(method.getName());
 		
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		System.setProperty("webdriver.gecko.driver", "geckodriver");
@@ -67,6 +70,8 @@ public class BaseClass {
 	
 	@AfterMethod
 	public void TearDown() {
+		
+		report.endTest(test);
 		
 		driver.close();
 	}

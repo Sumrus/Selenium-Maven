@@ -1,6 +1,5 @@
 package testcases;
 
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -16,7 +15,7 @@ public class LoginTest extends BaseClass {
 	@Test
 	public void LoginFailiureTest() {
 		
-		test = report.startTest("LoginFailiureTest");
+		//test = report.startTest("LoginFailiureTest");
 		
 		LoginPage login = new LoginPage();
 		
@@ -30,11 +29,11 @@ public class LoginTest extends BaseClass {
 		
 		AssertJUnit.assertEquals(ActualMsg, ExpMsg);	
 		
-		report.endTest(test);
+		//report.endTest(test);
 		
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void LoginSuccessTest() {
 		
@@ -45,7 +44,7 @@ public class LoginTest extends BaseClass {
 		
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	@Parameters ({"Param1","Param2"})
 	public void ParameterizedTest(String UserNameVal, String PasswordVal) {
@@ -55,7 +54,7 @@ public class LoginTest extends BaseClass {
 		
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void ExternalDataTes() {
 		
