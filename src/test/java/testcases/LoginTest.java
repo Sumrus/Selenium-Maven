@@ -1,12 +1,17 @@
 package testcases;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
+
 import org.testng.annotations.Test;
 
 import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pages.LoginPage;
+
+
+@Listeners(TestNgListenerClass.class)
 
 public class LoginTest extends BaseClass {
 	
